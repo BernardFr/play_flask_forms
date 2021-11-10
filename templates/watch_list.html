@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h1> {{list_name}} </h1>
+    <table>
+    <tr>
+        <th>Watch #</th>
+        <th>Crew</th>
+        <th>Crew</th>
+    </tr>
+        {% for watch in watch_list %}
+          <tr>
+          <td>{{ watch.number }}</td>
+          <td>{{ watch.crew_1 }}</td>
+          <td>{{ watch.crew_2 }}</td>
+          </tr>
+        {% endfor %}
+    </table>
+
+{% endblock main %}
+

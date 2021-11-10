@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h1> Crew_ID: {{crew_id}} </h1>
+    <h3>Watch Parameters</h3>
+      <div class="card">
+        <div class="card-body">
+          <li>ID: {{param.crew_id}} </li>
+          <li>Start: {{ param.start_date.strftime('%m/%d/%Y-%H:%M') }}</li>
+          <li>End: {{ param.end_date.strftime('%m/%d/%Y-%H:%M') }}</li>
+          <li>Watch Duration: {{ param.watch_duration }}</li>
+         </div>
+      </div>
+    <h3> Crew List </h3>
+      <div class="card">
+        <div class="card-body">
+            {% for cm in crew_list %}
+                <li>{{ cm.name }}  {{"Skipper" if cm.is_skipper else "" }}</li>
+            {% endfor %}
+         </div>
+      </div>
+
+
+{% endblock main %}
+

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h1> {{list_name}} </h1>
+    {% for task in tasks %}
+      <div class="card">
+        <div class="card-body">
+          <li>{{ task.title}} created on: {{ task.date }}</li>
+          <a href="{{ url_for('edit', task_id=task.id) }}" class="btn btn-primary">Edit</a>
+          <a href="{{ url_for('delete', task_id=task.id) }}" class="btn btn-danger">Delete</a>
+         </div>
+      </div>
+    {% endfor %}
+{% endblock main %}
+
